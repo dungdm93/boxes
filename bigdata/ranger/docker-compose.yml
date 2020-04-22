@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  postgres:
+    image: postgres:11-alpine
+    environment:
+      POSTGRES_PASSWORD: SuperSecr3t
+      POSTGRES_DB:       ranger
+    volumes:
+    - postgres_data:/var/lib/postgresql/data
+
+  ranger:
+    image: hub.teko.vn/data/ranger:2.0.0
+    command: [sleep, "7200"]
+    working_dir: /opt/ranger
+    ports:
+    - 6080:6080
+    volumes:
+    - ./postgresql-42.2.12.jar:/usr/share/java/postgresql-42.2.12.jar
+    - ./configs/install.properties:/opt/ranger/install.properties
+
+volumes:
+  postgres_data:
+
+networks:
+  default:
+    external:
+      name: bookshelf
