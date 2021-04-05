@@ -98,13 +98,13 @@
     <name>hive.server2.authentication</name>
     <value>NONE</value>
     <note>NONE | LDAP | KERBEROS | PAM | CUSTOM | NOSASL</note>
-  </property>
+  </property> -->
 
   <property>
     <name>hive.users.in.admin.role</name>
-    <value>root</value>
+    <value>admin</value>
     <note>Run `set role admin;` to switching to `admin` role</note>
-  </property> -->
+  </property>
 
   <!-- Storage Based Authorization -->
   <!-- https://cwiki.apache.org/confluence/display/Hive/Storage+Based+Authorization+in+the+Metastore+Server -->
