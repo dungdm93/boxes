@@ -26,15 +26,15 @@ services:
   #   ports:
   #   - 9090:9090
 
-  mc:
-    image: minio/mc
-    entrypoint: [/bin/sh]
-    stdin_open: true
-    tty: true
-    environment:
-      MC_HOST_local: http://admin:SuperSecr3t@minio:9000
-    volumes:
-    - .:/workspace
+  # mc:
+  #   image: minio/mc
+  #   entrypoint: [/bin/sh]
+  #   stdin_open: true
+  #   tty: true
+  #   environment:
+  #     MC_HOST_local: http://admin:SuperSecr3t@minio:9000
+  #   volumes:
+  #   - .:/workspace
 
 volumes:
   minio_data:
