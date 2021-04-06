@@ -13,7 +13,7 @@ services:
     - postgres_data:/var/lib/postgresql/data
 
   hive-metastore:
-    image: hub.teko.vn/data/hive:3.1.2-hadoop-3.1.0
+    image: hub.teko.vn/dataops/hive:3.1.2
     # HOTFIX: Illegal character in hostname at index 13: thrift://hive_hive-metastore_1.bookshelf:9083
     # Caused at org.apache.hadoop.hive.metastore.HiveMetaStoreClient.resolveUris(HiveMetaStoreClient.java:267)
     container_name: hive-metastore
@@ -30,7 +30,7 @@ services:
     - ./configs/hadoop/:/opt/hadoop/etc/hadoop/
 
   hive-server2:
-    image: hub.teko.vn/data/hive:3.1.2-hadoop-3.1.0
+    image: hub.teko.vn/dataops/hive:3.1.2
     entrypoint: ["/usr/local/scripts/hiveserver2-entrypoint.sh"]
     depends_on:
     - hive-metastore
