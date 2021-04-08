@@ -1,5 +1,6 @@
 ## 1. Authentication
 ### 1.1 Metastore authentication
+See `org.apache.hadoop.hive.metastore.AuthFactory#getAuthTransFactory`
 ```xml
 <property>
   <name>hive.metastore.sasl.enabled</name>
@@ -22,7 +23,8 @@
 ```
 
 ### 1.2 HiveServer2 authentication
-`hiveserver2` supports multiple authentication modes, such as Kerberos, LDAP, PAM, and customized code.
+`hiveserver2` supports multiple authentication modes, such as Kerberos, LDAP, PAM, and customized code.  
+See `org.apache.hive.service.auth.HiveAuthFactory#getAuthTransFactory`
 
 #### 1.2.1 `NONE`
 ```xml
